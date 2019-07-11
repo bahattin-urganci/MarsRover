@@ -6,7 +6,7 @@ using System.Text;
 namespace MarsRover.Command
 {
     public interface IRoverCommand : ICommand
-    {    
-        Rover Rover { get; set; }        
+    {
+        void SetReceiver(Rover rover);
     }
 }
