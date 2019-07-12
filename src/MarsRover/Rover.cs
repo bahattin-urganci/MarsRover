@@ -16,11 +16,11 @@ namespace MarsRover
             _location = location;
             _coordinate = coordinate;
             _direction = direction;
-            if (!IsValidInitialization())            
+            if (!ValidateRoverPosition())            
                 throw new InvalidOperationException("Location and Rover coordinates not valid");
             
         }
-        public bool IsValidInitialization() => (_coordinate.X >= 0 && _coordinate.X <= _location.Width) && (_coordinate.Y >= 0 && _coordinate.Y <= _location.Height);
+        public bool ValidateRoverPosition() => (_coordinate.X >= 0 && _coordinate.X <= _location.Width) && (_coordinate.Y >= 0 && _coordinate.Y <= _location.Height);
 
         public void Move(char command)
         {
@@ -36,18 +36,18 @@ namespace MarsRover
                     TurnRight();
                     break;
                 case 'M':
-                    Move();
+                    Go();
                     break;
                 default:
                     break;
             }
         }
 
-        public void TurnLeft() => _direction = _direction - 1 < Direction.North ? Direction.West : _direction - 1;
+        private void TurnLeft() => _direction = _direction - 1 < Direction.North ? Direction.West : _direction - 1;
 
-        public void TurnRight() => _direction = _direction + 1 > Direction.West ? Direction.North : _direction + 1;
+        private void TurnRight() => _direction = _direction + 1 > Direction.West ? Direction.North : _direction + 1;
 
-        public void Move()
+        private void Go()
         {
             switch (_direction)
             {
@@ -64,13 +64,15 @@ namespace MarsRover
                     MoveWest();
                     break;
             }
+            if (!ValidateRoverPosition())
+                throw new InvalidOperationException("Rover Can not exceed the given location");
+
         }
 
-        public void MoveEast() => _coordinate.X++;
-
-        public void MoveWest() => _coordinate.X--;
-        public void MoveNorth() => _coordinate.Y++;
-        public void MoveSouth() => _coordinate.Y--;        
+        private void MoveEast() => _coordinate.X++;
+        private void MoveWest() => _coordinate.X--;
+        private void MoveNorth() => _coordinate.Y++;
+        private void MoveSouth() => _coordinate.Y--;        
         public override string ToString() => $"{_coordinate.X} {_coordinate.Y} {_direction.ToString()[0]}";
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 
 namespace MarsRover.Tests
 {
+    [TestFixture]
     public class AcceptanceTests
     {
 

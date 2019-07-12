@@ -11,6 +11,7 @@ namespace MarsRover.Command
         private Rover _rover;
         public RoverCommand(string command)
         {
+            ValidateCommand(command);
             _command = command;
         }
         public void Execute()
@@ -24,6 +25,15 @@ namespace MarsRover.Command
         public void SetReceiver(Rover rover)
         {
             _rover = rover;
+        }
+
+        public void ValidateCommand(string command)
+        {
+            if (string.IsNullOrEmpty(command))
+                throw new ArgumentNullException("command", "Command can not be null");
+
+
+
         }
     }
 }

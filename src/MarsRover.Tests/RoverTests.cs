@@ -5,7 +5,7 @@ using MarsRover;
 using MarsRover.Model;
 using System;
 
-namespace Tests
+namespace MarsRover.Tests
 {
     [TestFixture]
     public class RoverTests
