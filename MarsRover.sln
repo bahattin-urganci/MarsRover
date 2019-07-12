@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Tests", "src\MarsRover.Tests\MarsRover.Tests.csproj", "{2971D1FB-0C8D-4BAF-B926-ACE209466BD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover.Tests", "tests\MarsRover.Tests\MarsRover.Tests.csproj", "{2971D1FB-0C8D-4BAF-B926-ACE209466BD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsRover", "src\MarsRover\MarsRover.csproj", "{C319F5D1-296B-424F-B832-763D98B95A2C}"
 EndProject
