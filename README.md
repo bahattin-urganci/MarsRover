@@ -1,5 +1,5 @@
 # Rover Komut Projesi
-Belli bir düzlem içerisinde hareket eden rovera ve tek bir komut mesajı ileterek, hedeflenen noktaya ulaşması beklenir.
+Belli bir düzlem içerisinde hareket eden rovera tek bir komut mesajı ileterek, hedeflenen noktaya ulaşması beklenir.
 
 
 ## Proje
