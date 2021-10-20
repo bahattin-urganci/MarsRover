@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MarsRover.Model;
+using System.Text.RegularExpressions;
+using MarsRover.Utilities;
 
 namespace MarsRover.Command
 {
@@ -32,7 +33,10 @@ namespace MarsRover.Command
             if (string.IsNullOrEmpty(command))
                 throw new ArgumentNullException("command", "Command can not be null");
 
+            Regex rx = new Regex(@"^[LMR]*$");
 
+            if (!rx.IsMatch(command))
+                throw new InvalidOperationException("Command is not valid");
 
         }
     }

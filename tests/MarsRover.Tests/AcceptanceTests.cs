@@ -1,5 +1,5 @@
 ﻿using MarsRover.Command;
-using MarsRover.Model;
+using MarsRover.Utilities;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -23,7 +23,6 @@ namespace MarsRover.Tests
             _commander.Execute();
 
             Assert.AreEqual(rover.ToString(), expected);
-
         }
     }
 }

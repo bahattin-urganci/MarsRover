@@ -1,9 +1,9 @@
-﻿using MarsRover.Model;
+﻿using MarsRover.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MarsRover.Model
+namespace MarsRover.Utilities
 {
     public class Location
     {

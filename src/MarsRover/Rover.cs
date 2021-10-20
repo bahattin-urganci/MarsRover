@@ -1,7 +1,5 @@
-﻿using MarsRover.Model;
+﻿using MarsRover.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MarsRover
 {
@@ -10,15 +8,13 @@ namespace MarsRover
         private Coordinate _coordinate;
         private Direction _direction;
         private Location _location;
-
         public void Initialize(Location location, Coordinate coordinate, Direction direction)
         {
             _location = location;
             _coordinate = coordinate;
             _direction = direction;
-            if (!ValidateRoverPosition())            
+            if (!ValidateRoverPosition())
                 throw new InvalidOperationException("Location and Rover coordinates not valid");
-            
         }
         public bool ValidateRoverPosition() => (_coordinate.X >= 0 && _coordinate.X <= _location.Width) && (_coordinate.Y >= 0 && _coordinate.Y <= _location.Height);
 
@@ -72,7 +68,7 @@ namespace MarsRover
         private void MoveEast() => _coordinate.X++;
         private void MoveWest() => _coordinate.X--;
         private void MoveNorth() => _coordinate.Y++;
-        private void MoveSouth() => _coordinate.Y--;        
+        private void MoveSouth() => _coordinate.Y--;
         public override string ToString() => $"{_coordinate.X} {_coordinate.Y} {_direction.ToString()[0]}";
     }
 }
