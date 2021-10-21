@@ -1,8 +1,6 @@
-using NUnit.Framework;
-using Moq;
-using MarsRover.Command;
-using MarsRover;
+using MarsRover.Rovers;
 using MarsRover.Utilities;
+using NUnit.Framework;
 using System;
 
 namespace MarsRover.Tests
